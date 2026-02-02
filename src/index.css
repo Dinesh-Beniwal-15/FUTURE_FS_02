@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Mini CRM Design System - Professional SaaS Dashboard */
+
+@layer base {
+  :root {
+    /* Core backgrounds */
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+    
+    /* Cards & surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    
+    /* Popovers & dropdowns */
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    
+    /* Primary brand - Deep Slate Blue */
+    --primary: 222 47% 20%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary - Light gray */
+    --secondary: 214 32% 96%;
+    --secondary-foreground: 222 47% 20%;
+    
+    /* Muted text and surfaces */
+    --muted: 214 20% 94%;
+    --muted-foreground: 215 16% 47%;
+    
+    /* Accent */
+    --accent: 214 32% 96%;
+    --accent-foreground: 222 47% 20%;
+    
+    /* Destructive - Red */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Borders and inputs */
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 222 47% 20%;
+    
+    --radius: 0.5rem;
+    
+    /* Status Colors */
+    --status-new: 217 91% 60%;
+    --status-new-bg: 217 91% 95%;
+    --status-contacted: 38 92% 50%;
+    --status-contacted-bg: 38 92% 95%;
+    --status-converted: 142 76% 36%;
+    --status-converted-bg: 142 76% 95%;
+    
+    /* Sidebar */
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 214 32% 91%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 222 47% 18%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 222 47% 18%;
+    --sidebar-ring: 217 91% 60%;
+  }
+
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+    
+    --card: 222 47% 9%;
+    --card-foreground: 210 40% 98%;
+    
+    --popover: 222 47% 9%;
+    --popover-foreground: 210 40% 98%;
+    
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 6%;
+    
+    --secondary: 222 47% 15%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --muted: 222 47% 15%;
+    --muted-foreground: 215 20% 65%;
+    
+    --accent: 222 47% 15%;
+    --accent-foreground: 210 40% 98%;
+    
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 222 47% 18%;
+    --input: 222 47% 18%;
+    --ring: 217 91% 60%;
+    
+    --status-new: 217 91% 60%;
+    --status-new-bg: 217 91% 15%;
+    --status-contacted: 38 92% 50%;
+    --status-contacted-bg: 38 92% 15%;
+    --status-converted: 142 76% 42%;
+    --status-converted-bg: 142 76% 15%;
+    
+    --sidebar-background: 222 47% 6%;
+    --sidebar-foreground: 214 32% 91%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 47% 12%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 47% 12%;
+    --sidebar-ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer components {
+  .stat-card {
+    @apply bg-card rounded-xl border border-border p-6 shadow-sm transition-all duration-200 hover:shadow-md;
+  }
+  
+  .table-row-hover {
+    @apply transition-colors duration-150 hover:bg-muted/50;
+  }
+  
+  .slide-in {
+    animation: slideIn 0.3s ease-out;
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.2s ease-out;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--border));
+    border-radius: 3px;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
