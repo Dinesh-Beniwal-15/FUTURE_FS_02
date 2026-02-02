@@ -2,7 +2,7 @@
 
 A modern CRM dashboard for managing leads, built with React, TypeScript, and Vite.
 
-link-> https://future-fs-02-drab.vercel.app/dashboard
+link-> https://future-fs-02-drab.vercel.app/
 
 ## Features
 
